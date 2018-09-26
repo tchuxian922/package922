@@ -28,7 +28,6 @@ public class Main {
         System.out.println("5. Check inventory");
         System.out.println("6. Make coffee");
         System.out.println("0. Exit\n");
-        System.out.println("Test Line");
         
         //Get user input
         try {
