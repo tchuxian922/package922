@@ -27,7 +27,9 @@ public class Main {
         System.out.println("4. Add inventory");
         System.out.println("5. Check inventory");
         System.out.println("6. Make coffee");
-        System.out.println("0. Exit\n");
+	    
+	    //just a testing
+        System.out.println("7. Exit\n");
         
         //Get user input
         try {
@@ -40,7 +42,7 @@ public class Main {
 		        if (userInput == 4) addInventory();
 		        if (userInput == 5) checkInventory();
 		        if (userInput == 6) makeCoffee();
-		        if (userInput == 0) System.exit(0);
+		        if (userInput == 7) System.exit(0); //pull request testing
         	} else {
         		System.out.println("Please enter a number from 0 - 6");
             	mainMenu();
