@@ -27,8 +27,9 @@ public class Main {
         System.out.println("4. Add inventory");
         System.out.println("5. Check inventory");
         System.out.println("6. Make coffee");
+	    
 	    //just a testing
-        System.out.println("7. Exit\n");
+        System.out.println("0. Exit\n");
         
         //Get user input
         try {
