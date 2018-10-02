@@ -122,10 +122,11 @@ public class Recipe {
     /**
 	 * @param name   The name to set.
 	 */
-    public void setName(String name) {
-    	if(name != null) {
+    public void setName(String name) throws RecipeException {
+    	if(name != null && !name.isEmpty()) {
     		this.name = name;
     	}
+    	else throw new RecipeException("Please input a valid recipe name.");
 	}
     /**
 	 * @return   Returns the price.
