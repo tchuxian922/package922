@@ -1,5 +1,7 @@
 package edu.ncsu.csc326.coffeemaker;
 
+import edu.ncsu.csc326.coffeemaker.exceptions.RecipeException;
+
 public class RecipeBook {
 	
 	/** Array of recipes in coffee maker*/
@@ -79,7 +81,7 @@ public class RecipeBook {
 	 * @param newRecipe
 	 * @return String
 	 */
-	public synchronized String editRecipe(int recipeToEdit, Recipe newRecipe) {
+	public synchronized String editRecipe(int recipeToEdit, Recipe newRecipe) throws RecipeException {
 		if (recipeArray[recipeToEdit] != null) {
 			String recipeName = recipeArray[recipeToEdit].getName();
 			newRecipe.setName("");
