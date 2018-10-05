@@ -1,6 +1,7 @@
 package edu.ncsu.csc326.coffeemaker;
 
 import edu.ncsu.csc326.coffeemaker.exceptions.InventoryException;
+import edu.ncsu.csc326.coffeemaker.exceptions.RecipeException;
 
 /**
  * @author Sarah Heckman
@@ -52,7 +53,7 @@ public class CoffeeMaker {
 	 * @param r
 	 * @return String
 	 */
-	public String editRecipe(int recipeToEdit, Recipe r) {
+	public String editRecipe(int recipeToEdit, Recipe r) throws RecipeException {
 		return recipeBook.editRecipe(recipeToEdit, r);
 	}
     
