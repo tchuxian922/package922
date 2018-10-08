@@ -225,25 +225,28 @@ public class Main {
         }
         
         int recipeToPurchase = recipeListSelection("Please select the number of the recipe to purchase.");
-        
-        String amountPaid = inputOutput("Please enter the amount you wish to pay");
-        int amtPaid = 0;
-        try {
-        	amtPaid = Integer.parseInt(amountPaid);
-        } catch (NumberFormatException e) {
-        	System.out.println("Please enter a positive integer");
-        	mainMenu();
-        }
-        
-        int change = coffeeMaker.makeCoffee(recipeToPurchase, amtPaid);
-        
-        if (change == amtPaid) {
-        	System.out.println("Insufficient funds to purchase.");
-        } else {
-        	System.out.println("Thank you for purchasing " + coffeeMaker.getRecipes()[recipeToPurchase].getName());
-        }
-        System.out.println("Your change is: " + change + "\n");
-        mainMenu();
+
+        if (recipeToPurchase != -1) {
+			String amountPaid = inputOutput("Please enter the amount you wish to pay");
+			int amtPaid = 0;
+			try {
+				amtPaid = Integer.parseInt(amountPaid);
+			} catch (NumberFormatException e) {
+				System.out.println("Please enter a positive integer");
+				mainMenu();
+			}
+
+			int change = coffeeMaker.makeCoffee(recipeToPurchase, amtPaid);
+
+			if (change == amtPaid) {
+				System.out.println("Insufficient funds to purchase.");
+			} else {
+				System.out.println("Thank you for purchasing " + coffeeMaker.getRecipes()[recipeToPurchase].getName());
+			}
+			System.out.println("Your change is: " + change + "\n");
+			mainMenu();
+		}
+		else mainMenu();
     }
     
     /**
@@ -277,10 +280,8 @@ public class Main {
     	int recipe = 0;
         try {
         	recipe = Integer.parseInt(userSelection) - 1;
-        	if (recipe >= 0 && recipe <=2) {
-        		//do nothing here.
-        	} else {
-        		recipe = -1;
+        	if (recipe < 0 || recipe > 2) {
+        		throw new NumberFormatException();
         	}
         } catch (NumberFormatException e) {
         	System.out.println("Please select a number from 1-3.");

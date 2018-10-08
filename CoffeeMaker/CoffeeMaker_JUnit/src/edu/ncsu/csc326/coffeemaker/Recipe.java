@@ -144,7 +144,7 @@ public class Recipe {
     	} catch (NumberFormatException e) {
     		throw new RecipeException("Price must be a positive integer");
     	}
-		if (amtPrice >= 0) {
+		if (amtPrice > 0) {
 			this.price = amtPrice;
 		} else {
 			throw new RecipeException("Price must be a positive integer");
