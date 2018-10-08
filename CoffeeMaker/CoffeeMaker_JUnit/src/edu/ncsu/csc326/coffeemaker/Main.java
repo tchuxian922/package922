@@ -35,7 +35,7 @@ public class Main {
         try {
         	int userInput = Integer.parseInt(inputOutput("Please press the number that corresponds to what you would like the coffee maker to do."));
         	
-        	if (userInput >= 0 && userInput <=6) {
+        	if (userInput >= 0 && userInput <=7) {
 		        if (userInput == 1) addRecipe();
 		        if (userInput == 2) deleteRecipe();
 		        if (userInput == 3) editRecipe();
@@ -44,11 +44,11 @@ public class Main {
 		        if (userInput == 6) makeCoffee();
 		        if (userInput == 7) System.exit(0); //pull request testing
         	} else {
-        		System.out.println("Please enter a number from 0 - 6");
+        		System.out.println("Please enter a number from 0 - 7");
             	mainMenu();
         	}
         } catch (NumberFormatException e) {
-        	System.out.println("Please enter a number from 0 - 6");
+        	System.out.println("Please enter a number from 0 - 7");
         	mainMenu();
         }
     }
